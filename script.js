@@ -22,12 +22,12 @@ window.onload = function () {
 
 let timer;
 
-let i = 0;
+let index = 0;
 
 function next() {
-  i++;
-  if (i > images.length - 1) {
-    i = 0;
+  index++;
+  if (index > images.length - 1) {
+    index = 0;
   }
   sliderElement.src = images[i];
 }
