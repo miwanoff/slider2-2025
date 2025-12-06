@@ -18,30 +18,30 @@ window.onload = function () {
   nextButton.addEventListener("click", next);
   goButton.addEventListener("click", goAuto);
   stopButton.addEventListener("click", stop);
-};
 
-let timer;
+  let timer;
 
-let index = 0;
+  let index = 0;
 
-function next() {
-  index++;
-  if (index > images.length - 1) {
-    index = 0;
+  function next() {
+    index++;
+    if (index > images.length - 1) {
+      index = 0;
+    }
+    sliderElement.src = images[index];
   }
-  sliderElement.src = images[i];
-}
 
-function goAuto() {
-  stop();
-  timer = setInterval(next, 1000);
-}
+  function goAuto() {
+    stop();
+    timer = setInterval(next, 1000);
+  }
 
-function stop() {
-  clearInterval(timer);
-}
+  function stop() {
+    clearInterval(timer);
+  }
 
-function showImage(event) {
-  let image = event.target;
-  //let name = image.src;
-}
+  function showImage(event) {
+    let image = event.target;
+    //let name = image.src;
+  }
+};
