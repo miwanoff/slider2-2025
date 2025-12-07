@@ -10,6 +10,9 @@ window.onload = function () {
   const goButton = document.getElementById("go");
   const stopButton = document.getElementById("stop");
 
+  const effectButton = document.getElementById("get_effect");
+  const formElement = document.forms.effects;
+
   let mins = document.getElementsByClassName("mini");
   for (let i = 0; i < mins.length; i++) {
     mins[i].addEventListener("click", showImage);
@@ -24,10 +27,11 @@ window.onload = function () {
 
   let index = 0;
 
+  let effect = "none";
+
   function next() {
     addEffect();
     t = setTimeout(changeEffect, 500);
-
     t = setTimeout(removeEffect, 1000);
   }
 
@@ -54,11 +58,22 @@ window.onload = function () {
   }
 
   function addEffect() {
-    sliderElement.classList.add("fade");
+    sliderElement.classList.add(effect);
   }
 
   function removeEffect() {
-    sliderElement.classList.remove("fade");
+    sliderElement.classList.remove(effect);
   }
   // addEffect()
+
+  function getEffect() {
+    for (let i = 0; i < formElement.length; i++) {
+      if (formElement[i].checked) {
+        effect = formElement[i].value;
+        console.log(effect);
+      }
+    }
+  }
+
+  effectButton.addEventListener("click", getEffect);
 };
