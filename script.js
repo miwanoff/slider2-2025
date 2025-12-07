@@ -20,10 +20,18 @@ window.onload = function () {
   stopButton.addEventListener("click", stop);
 
   let timer;
+  let t;
 
   let index = 0;
 
   function next() {
+    addEffect();
+    t = setTimeout(changeEffect, 500);
+
+    t = setTimeout(removeEffect, 1000);
+  }
+
+  function changeEffect() {
     index++;
     if (index > images.length - 1) {
       index = 0;
@@ -44,4 +52,13 @@ window.onload = function () {
     let image = event.target;
     //let name = image.src;
   }
+
+  function addEffect() {
+    sliderElement.classList.add("fade");
+  }
+
+  function removeEffect() {
+    sliderElement.classList.remove("fade");
+  }
+  // addEffect()
 };

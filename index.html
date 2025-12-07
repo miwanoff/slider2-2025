@@ -16,10 +16,22 @@
             width: 520px;
             height: 360px;
             object-fit: cover;
+            position: relative;
+            left: 0;
+            opacity: 1;
+            transition: all 0.3s;
         }
 
         .mini {
             width: 120px;
+        }
+
+        .fade {
+            opacity: 0 !important;
+        }
+
+        .go {
+            left: 520px !important
         }
     </style>
 </head>
@@ -28,7 +40,9 @@
     <div id="wrap">
         <img src="images/landscape-photography-tips-yosemite-valley-feature.webp" alt="" id="slider">
     </div>
-    <img src="images/landscape-photography-tips-yosemite-valley-feature.webp" alt="" class="mini"><img src="images/lanscape.jfif" alt="" class="mini"><img src="images/UK_advice-gardening-growing-poppies_header.jpg" alt="" class="mini"><br><br>
+    <img src="images/landscape-photography-tips-yosemite-valley-feature.webp" alt="" class="mini"><img
+        src="images/lanscape.jfif" alt="" class="mini"><img src="images/UK_advice-gardening-growing-poppies_header.jpg"
+        alt="" class="mini"><br><br>
     <button id="next">&gt;</button>
     <button id="go">Go</button>
     <button id="stop">Stop</button>
